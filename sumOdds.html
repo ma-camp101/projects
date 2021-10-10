@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sumOdds</title>
+    <script>
+        function sumOdds() {
+            // Input: any number (integer)
+            var number = parseFloat(document.getElementById('nInputBox').value);
+            var i;
+            var result;
+            // Process: if number is > 0, then count backwards and sum all odd integers
+            if(number < 1) { 
+                return 0;
+            }
+            result=0;
+            for(i = number; i > 0; i--) {
+                if(i % 2 != 0) {
+                    result += i;
+                }
+            }
+            // Output: result is sum of all odd integers
+            document.getElementById('outputDiv').innerHTML = result;
+        }
+    </script>
+</head>
+<body>
+    <h1>Adding Odd Integers</h1> 
+    <p>This program will count all odd integers between zero and your number.</p><br><br>
+    Enter any Integer: <input type="text" id="nInputBox"><br><br>    
+    <button type="button" onclick="sumOdds()">Calculate Sum</button><br><br>  
+    Total of odd integers: <br><div id="outputDiv"></div>   
+</body>
+</html>

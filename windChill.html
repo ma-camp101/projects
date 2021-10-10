@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wind Chill</title>
+    <script>
+        //Input 1: temperature in Fahrenheit
+        //Input 2: wind speed in miles per hour
+        //Process: take temperature and wind speed and send them to the windChill function
+        //Output: show user result of windChill function
+        function doInputOutput() {
+            var tempF = parseInt(document.getElementById('temperatureInputBox').value);
+            var speed = parseInt(document.getElementById('windSpeedInputBox').value);
+            var chill = windChill(tempF, speed);
+            document.getElementById('outputDiv').innerHTML = chill + "\u00B0 Fahrenheit";
+        }
+        //Input: temperature and wind speed from doInputOutput function
+        //Process: calculate wind chill using formula
+        //Output: return result to doInputOutput function
+        function windChill(tempF, speed) {
+            f = 35.74 + 0.6215 * tempF - 35.75 * Math.pow(speed, 0.16) + 0.4275 * tempF * Math.pow(speed, 0.16);
+            return f.toFixed(1);
+        }
+    </script>
+</head>
+<body>
+    <h1>Wind Chill</h1>
+    <p>Enter the temperature in Fahrenheit and wind speed in miles per hour to learn the wind chill factor.</p>
+    <table>       
+        <thead>
+            <tr>
+                <th>Temperature</th>
+                <th>Wind Speed</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>            
+                <td><input type="text" id="temperatureInputBox"></td>
+                <td><input type="text" id="windSpeedInputBox"></td>        
+                <td><button type="button" onclick="doInputOutput()">Wind Chill</button></td>
+                <td><div id="outputDiv"></div></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>(In Fahrenheit)</th>
+                <th>(In Miles per Hour)</th>
+            </tr>
+        </tfoot>
+    </table>    
+</body>
+</html>

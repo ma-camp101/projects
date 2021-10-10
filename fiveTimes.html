@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Times Tables</title>
+    <script>
+        function fiveTimes() {
+            // Input: No user input. 5 times tables to be run automatically on pushing button
+            var display = "";
+            // Process: i (number being multiplied by five) counts from 1 up to 12
+            for(let i = 1; i <= 12; i++) {
+                var result = i * 5;
+                display += 5+" * "+i+" = "+result+"<br>"; 
+            }
+            // Output: displays 5 times tables
+            document.getElementById('outputDiv').innerHTML = display; 
+        }
+    </script>
+</head>
+<body>
+    <h2>Fives Times Tables</h2>
+    <p>
+        This program will run the five times tables 1 to 12, inclusive, upon pressing compute.
+    </p>
+    <button type="button" onclick="fiveTimes()">Compute</button><br><br>
+    <div id="outputDiv"></div>
+</body>
+</html>
