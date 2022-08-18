@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Mike Camp's Portfolio">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700"  rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/brands.min.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 
     <title>Mike Camp's Portfolio</title>
@@ -22,20 +22,95 @@
                 <span class="hamburger"></span>
             </button>
             <nav class="nav">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">My Work</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">About Me</a></li>
+                <ul class="nav_list">
+                    <li class="nav_item"><a href="#home" class="nav_link">Home</a></li>
+                    <li class="nav_item"><a href="#services" class="nav_link">My Services</a></li>
+                    <li class="nav_item"><a href="#about" class="nav_link">My Work</a></li>
+                    <li class="nav_item"><a href="#work" class="nav_link">About Me</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <main>
-        <section class="intro" id="home"></section>
+
+        <!-- Introduction -->
+        <section class="intro" id="home">
+            <h1 class="section_title section_title-intro">
+                Hi, I am <strong>Mike Camp</strong>
+            </h1>
+            <p class="section_subtitle section_subtitle-intro">
+                Front-end Dev
+            </p>
+            <img src="images/rsz_1rsz_mike-camp.jpg" alt="Mike Camp Portrait" class="intro_img">
+        </section>
+
+        <!-- Services -->
+        <section class="my-services" id="services">
+            <h2 class="section_title section_title-services">What I Do</h2>
+            <div class="services">
+                <div class="service">
+                    <h3>Web Design</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa minima exercitationem distinctio itaque necessitatibus et modi blanditiis vel asperiores hic officia explicabo laborum, vitae animi assumenda recusandae debitis repellendus obcaecati?</p>
+                </div>
+                <div class="service">
+                    <h3>Web Development</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa minima exercitationem distinctio itaque necessitatibus et modi blanditiis vel asperiores hic officia explicabo laborum, vitae animi assumenda recusandae debitis repellendus obcaecati?</p>
+                </div>
+                <div class="service">
+                    <h3>Wordpress</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa minima exercitationem distinctio itaque necessitatibus et modi blanditiis vel asperiores hic officia explicabo laborum, vitae animi assumenda recusandae debitis repellendus obcaecati?</p>
+                </div>
+            </div>
+
+            <a href="#work" class="btn">My Work</a>
+        </section>
+
+        <!-- About Me -->
+        <section class="about-me" id="about">
+            <h2 class="section_title section_title-about">Who I Am</h2>
+            <p class="section_subtitle section_subtitle-about"></p>
+            <div class="about-me-body">
+                <p>I am currently a full-time student at Brigham Young University - Idaho. I am working towards a bachelor's degree in Applied Technology. I am starting my Senior year in the Fall of 2022.
+                    I have a Certificate for Web Front-End and have submitted the requirements to receive my associate's degree in Applied Technology, as well.
+                </p>
+                <p></p>
+                <p></p>
+            </div>
+
+            <img src="images/rsz_mike_camp.jpg" alt="Mike Camp Long Portrait">
+        </section>
+
+        <!-- My Work -->
+        <section class="my-work" id="work">
+            <h2 class="section_title">My Work</h2>
+            <p class="section_subtitle"></p>
+            <div class="portfolio">
+                <a href="#" class="portfolio_item">
+                    <img src="#" alt="" class="portfolio_img">
+                </a>
+            </div>
+        </section>
     </main>
     <footer>
-        <p class="footer">&copy; <span id="year"></span> | Mike Camp | Pennsylvania | <a class="codepen" href="https://www.byui.edu/online">BYUI Online Learning</a> <strong><span id="modified"></span></strong></p> 
+        <p class="footer"> Mike Camp <span id="year"></span>  | <a class="codepen" href="https://www.byui.edu/online">BYUI Online Learning</a></p>
+        <p><a href="mailto@mikecamp.dev" class="footer__link">m.a.camp9999@gmail.com</a></p>
+
+        <ul class="social_list">
+            <li class="social_list-item">
+                <a href="#" class="social_list-link">a</a>
+            </li>
+            <li class="social_list-item">
+                <a href="#" class="social__list-link">b</a>
+            </li>
+            <li class="social_list-item">
+                <a href="#" class="social_list-link">c</a>
+            </li>
+            <li class="social_list-item">
+                <a href="#" class="social_list-link">d</a>
+            </li>
+        </ul>
     </footer>
     <script src="js/dates.js"></script> 
+    <script src="js/index.js"></script>
 </body>
 </html>
