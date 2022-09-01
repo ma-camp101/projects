@@ -37,6 +37,10 @@
 
 /* General Properties */
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: var(--clr-light);
     color: var(--clr-dark);
@@ -114,6 +118,34 @@ header {
     max-width: 200px;
 }
 
+.hamburger {
+    display: block;
+    position: relative;
+}
+
+.hamburger, .hamburger::before, .hamburger::after {
+    background: var(--clr-dark);
+    width: 2em;
+    height: 3px;
+    border-radius: 1em;
+    transition: transform 250ms ease-in-out;
+}
+
+.hamburger::before, .hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.hamburger::before {
+    top: 6px;
+}
+
+.hamburger::after {
+    bottom: 6px;
+}
+
 .nav {
   position: fixed;
   background: var(--clr-dark);
@@ -123,15 +155,69 @@ header {
   right: 0;
   left: 0;
   z-index: 100;
-  transform: translate(100%);
+  transform: translatex(100%);
+  transform: 750ms cubic-bezier(.5, 0, .5, 1);
+}
+
+.nav-toggle {
+    height: 2em;
+    padding: .5em;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    z-index: 1000;
 }
 
 .nav_list {
     list-style-type: none;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 .nav_list a {
     text-decoration: none;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-h2);
+}
+
+.nav_link {
+    color: inherit;
+}
+
+.nav_link:hover {
+    color: var(--clr-accent);
+}
+
+.nav-open .nav {
+    transform: translateX(0);
+}
+
+.nav-open .hamburger, .nav-open .hamburger::before {
+    background: var(--clr-accent);
+}
+
+.nav-open .nav-toggle {
+    position: fixed;
+}
+
+.nav-open .hamburger {
+    transform: rotate(.625turn);
+}
+
+.nav-open .hamburger::before {
+    transform: rotate(90deg) translatex(-6px);
+}
+
+.nav-open .hamburger::after {
+    opacity: 0;
 }
 
 /* Intro Section */
@@ -364,4 +450,16 @@ header {
 .footer_link:hover, .social_list-link:hover {
     opacity: .5;
     text-decoration: underline;
+}
+
+.portfolio-item-individual {
+    padding: 0 2em 2em;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.portfolio-item-individual p {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
